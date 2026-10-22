@@ -1,0 +1,15 @@
+{
+  "checks": [
+    {
+      "name": "depcruise",
+      "when": ["**/*.js", "**/*.mjs", "**/*.cjs", "package.json", ".dependency-cruiser*"],
+      "run": "npm run --silent depcruise:check",
+      "timeout": 120
+    }
+  ],
+  "metrics": {
+    "lizard": { "ccn": 15, "length": 80, "params": 6 }
+  },
+  "tests": ["test/**", "**/*.test.*"],
+  "baselines": [".dependency-cruiser-known-violations.json"]
+}
